@@ -1,9 +1,9 @@
 
 //Fetches geolocation from browser
-function showPosition(position) {
+function getPos(position) {
   const lat = position.coords.latitude;
   const long = position.coords.longitude;
-  console.log("Latitude: " + lat + ", Longitude: " + lon);
+  console.log("Latitude: " + lat + ", Longitude: " + long);
 }
  navigator.geolocation.getCurrentPosition(getPos)
  
