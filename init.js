@@ -1,3 +1,4 @@
+
 //Fetches geolocation from browser
  navigator.geolocation.getCurrentPosition(showPosition)
  
@@ -18,3 +19,23 @@
 }
     const temp = data.current.temperature_2m;
     const precip = data.current.precipitation;
+
+    if (hours >= 20 || hours < 8) { 
+        window.location.replace("night.html");
+    }
+    if (precip > 0 && precip < 2 && temp > 32) {
+        window.location.replace("lrain.html");
+    }
+    if (precip == 0 && temp < 50) {
+        window.location.replace("cloudy.html");
+    }
+    if (precip == 0 && temp >= 65) {
+        window.location.replace("sunny.html");
+    }
+    if (precip > 0 && temp < 32) {
+        window.location.replace("snow.html");
+    }
+    if (precip > 0 && precip > 2 && temp < 32) {
+        window.location.replace("hrain.html");
+    }
+
