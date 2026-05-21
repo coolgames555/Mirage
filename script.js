@@ -10,7 +10,13 @@ function handlePositionError(error) {
   console.error('Geolocation error:', error);
 }
 
-navigator.geolocation.getCurrentPosition(showPosition, handlePositionError);
+const currentPage = window.location.pathname.split('/').pop();
+const destinationPages = ['night.html', 'lrain.html', 'cloudy.html', 'sunny.html', 'snow.html', 'hrain.html'];
+if (!destinationPages.includes(currentPage)) {
+  navigator.geolocation.getCurrentPosition(showPosition, handlePositionError);
+} else {
+  console.log(`Redirect script disabled on ${currentPage}`);
+}
 
 async function fetchWeatherData(lat, long) {
   try {
