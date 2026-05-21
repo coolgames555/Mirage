@@ -27,32 +27,3 @@ async function fetchWeatherData(lat, long) {
 
     const now = new Date();
     const hours = now.getHours();
-
-    if (hours >= 20 || hours < 8) {
-      window.location.replace('night.html');
-      return;
-    }
-    if (precip > 0 && precip < 2 && temp > 32) {
-      window.location.replace('lrain.html');
-      return;
-    }
-    if (precip > 0 && temp < 32) {
-      window.location.replace('snow.html');
-      return;
-    }
-    if (precip >= 2 && temp <= 32) {
-      window.location.replace('hrain.html');
-      return;
-    }
-    if (precip === 0 && temp < 50) {
-      window.location.replace('cloudy.html');
-      return;
-    }
-    if (precip === 0 && temp >= 65) {
-      window.location.replace('sunny.html');
-      return;
-    }
-  } catch (error) {
-    console.error('Failed to fetch weather data:', error);
-  }
-}
