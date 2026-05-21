@@ -1,6 +1,6 @@
 
 //Fetches geolocation from browser
- navigator.geolocation.getCurrentPosition(showPosition)
+ navigator.geolocation.getCurrentPosition()
  
  //Store longitude and latitude for future use
  let long = position.coords.longitude
