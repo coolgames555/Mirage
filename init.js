@@ -1,10 +1,12 @@
 
 //Fetches geolocation from browser
- navigator.geolocation.getCurrentPosition()
+function showPosition(position) {
+  const lat = position.coords.latitude;
+  const long = position.coords.longitude;
+  console.log("Latitude: " + lat + ", Longitude: " + lon);
+}
+ navigator.geolocation.getCurrentPosition(getPos)
  
- //Store longitude and latitude for future use
- let long = position.coords.longitude
- let lat = position.coords.latitude
 
  // Gets current date and time
  const now = new Date(); 
